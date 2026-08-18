@@ -1,6 +1,6 @@
 # Impact of Prompting Strategies on Information Extraction from AI News Articles Using Open-Source LLMs
 
-Master's ML project. I compare **zero-shot**, **few-shot**, and **structured (JSON)**
+I compare **zero-shot**, **few-shot**, and **structured (JSON)**
 prompting for extracting company names, AI model names, and AI technology labels
 from AI-related news articles, using two open-source LLMs (**Llama 3.1 8B
 Instruct** and **Gemma 3 12B IT**, via OpenRouter).
