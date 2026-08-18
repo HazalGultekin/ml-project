@@ -94,6 +94,12 @@ def main():
                     })
 
     error_df = pd.DataFrame(records)
+    # Sort for deterministic output: entities come from Python sets, whose
+    # iteration order is randomized per run (PYTHONHASHSEED), so without
+    # this the row order would differ every time the script is re-run.
+    error_df = error_df.sort_values(
+        ["model", "strategy", "article_id", "error_type", "category", "entity"]
+    ).reset_index(drop=True)
     error_df.to_csv(OUTPUT_PATH, index=False)
 
     print(f"Saved {len(error_df)} error instances to {OUTPUT_PATH}\n")
